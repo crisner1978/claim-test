@@ -1,0 +1,15 @@
+name: Claim headless.ly tenant
+on:
+  push:
+    branches: [main, master]
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  claim:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dot-org-ai/id@v1
+        with:
+          tenant: 'clm_95cc8545a8c045d4a4aad3af683c5f47'
